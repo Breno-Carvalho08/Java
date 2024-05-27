@@ -1,0 +1,407 @@
+package Requisição;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Login{
+	Scanner entrada = new Scanner(System.in);
+	
+	//Info Funcionário
+	String nome;
+	String RA;
+	
+	//Info itens solicitados
+	int quantItemPedido = 0;
+	int protetorAuricular = 0;
+	int Luva = 0;
+	int CremeProtetor = 0;
+	int oculosDeProtecao = 0;
+	int Camisa = 0;
+	int Shorts = 0;
+	int BlusaMangaLonga = 0;
+	int Moletom = 0;
+	int Calca = 0;
+	int Bota = 0;
+	
+	//Variáveis de confirmação
+	int conferir = 0;
+	int confirmar = 0;
+	int selecao = 0;
+	
+	//Variável numPedidos
+	Random aleatorio = new Random();
+	int max = 9999999;
+	int min = 10000;
+	int numPedido =	aleatorio.nextInt(max - min);
+	
+	//Parte de Login
+	Login(String nome, String RA){
+		this.nome = nome;
+		this.RA= RA;
+	}
+	
+	String getNome() {
+		return nome;
+	}
+	
+	void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	String getRA() {
+		return RA;
+	}
+	
+	void setRA(String RA) {
+		this.RA = RA;
+	}
+	
+	
+	int getNumPedido() {
+		return numPedido;
+	}
+		
+	//Sistema de Requisição 
+		public void requisicao() {
+			int i = 0;
+			System.out.println("O que você deseja solicitar? \n1 - EPI's\n2 - Roupas");
+			i = entrada.nextInt();
+			
+			while(i > 2) {
+				System.out.println("Opção inválida");
+				System.out.println("Selecione uma opção válida");
+				requisicao();
+			}
+			
+			switch(i) {
+				case 1:
+					menuEPI();
+					break;
+				case 2:
+					menuRoupa();
+					break;				
+			}
+		}
+	
+	
+	
+	//Menu dos EPI's
+	void menuEPI() {
+		System.out.println(
+			"1 - Protetor auricular\n" +
+			"2 - Luva\n" +
+			"3 - Creme Protetor\n" +
+			"4 - Óculos" 
+				);
+		selecao = entrada.nextInt();
+		while(selecao > 4) {
+			System.out.println("Opção inválida");
+			menuEPI();
+		}
+		switch(selecao) {
+			case 1:
+				protetorAuricular++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuEPI();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+			case 2:
+				Luva++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuEPI();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+				
+			case 3:
+				CremeProtetor++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuEPI();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+			case 4:
+				oculosDeProtecao++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuEPI();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+			default:
+				System.out.println("Opção inválida.");
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				
+				
+			while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuEPI();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}	
+		}
+	}
+	
+	//Menu das Roupas
+	void menuRoupa() {
+		System.out.println(
+				"1 - Camisa\n" +
+				"2 - Shorts\n" +
+				"3 - Blusa Manga Longa\n" +
+				"4 - Moletom\n" +
+				"5 - Calça\n" + 
+				"6 - Bota" 
+					);
+			selecao = entrada.nextInt();
+			while(selecao > 6) {
+				System.out.println("Opção inválida");
+				menuRoupa();
+			}
+			
+			switch(selecao) {
+			case 1:
+				Camisa++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+				
+			case 2:
+				Shorts++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+					
+				}
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+				
+			case 3:
+				BlusaMangaLonga++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				
+				}
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+				
+			case 4:
+				Moletom++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+					
+				}
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+				
+				
+			case 5:
+				Calca++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+					
+				}
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+				
+			case 6:
+				Bota++;
+				quantItemPedido++;
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida.");
+					System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+					confirmar = entrada.nextInt();
+				}
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				if(confirmar == 2){
+					conferirPedido();
+					break;
+				}
+					
+			default:
+				System.out.println("Opção inválida.");
+				System.out.println("Deseja adiconar mais itens?\n1 - Sim\n2 - Não ");
+				confirmar = entrada.nextInt();
+				if(confirmar == 1) {
+					menuRoupa();
+					break;
+				}
+				else{
+					conferirPedido();
+					break;
+				}			
+			}
+		}
+	
+	//Metodo para conferir o pedido
+		public void conferirPedido() {
+			int j = 0;
+			System.out.println("Deseja conferir seu pedido?\n1 - Sim\n2 - Não");
+			j = entrada.nextInt();
+			
+			while(j > 2) {
+				System.out.println("Opção inválida");
+				System.out.println("Deseja conferir seu pedido?\n1 - Sim\n2 - Não");
+				j = entrada.nextInt();
+			}
+			switch(j) {
+			case 1:
+			
+			System.out.printf("Total de Itens pedidos: %d\n",quantItemPedido);
+				if(protetorAuricular > 0) {
+					System.out.printf("Protetor Auricular: %d\n",protetorAuricular);
+				}if(Luva > 0) {
+					System.out.printf("Luva: %d\n",Luva);
+				}if(CremeProtetor > 0) {
+					System.out.printf("Creme Protetor: %d\n",CremeProtetor);
+				}if(oculosDeProtecao > 0) {
+					System.out.printf("Óculos de proteção: %d\n", oculosDeProtecao);
+				}if(Camisa > 0) {
+					System.out.printf("Camisa: %d\n",Camisa);
+				}if(Shorts > 0) {
+					System.out.printf("Shorts: %d\n",Shorts);
+				}if(BlusaMangaLonga> 0) {
+					System.out.printf("Blusa manga longa: %d\n",BlusaMangaLonga);
+				}if(Moletom > 0) {
+					System.out.printf("Moletom: %d\n",Moletom);
+				}if(Calca > 0) {
+					System.out.printf("Calça: %d\n",Calca);
+				}if(Bota > 0) {
+					System.out.printf("Bota: %d\n",Bota);
+				}
+				System.out.println("Gostaria de adicionar novos itens?\n1 - Sim\n2 - Não");
+				confirmar = entrada.nextInt();
+				while(confirmar > 2) {
+					System.out.println("Opção inválida");
+					System.out.println("Gostaria de adicionar novos itens?\n1 - Sim\n2 - Não");
+					confirmar = entrada.nextInt();
+				}
+				switch(confirmar) {
+				case 1:
+					requisicao();
+					break;
+					
+				case 2: 
+					System.out.println("Pedido Finalizado!");
+					break;
+					
+				}	
+				break;
+			case 2: 
+				System.out.println("Pedido Finalizado!");
+				break;
+			
+			}	
+		}
+	}

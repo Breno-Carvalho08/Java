@@ -1,0 +1,51 @@
+package Requisição;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Almoxarifado {
+	public static void main(String[] args) {
+		String nome;
+		String RA;
+		Scanner entrada = new Scanner(System.in);
+		
+		Login pessoa1 = new Login("Breno","290805-0");
+		Login pessoa2 = new Login("Henrique","278345-3");
+		Login pessoa3 = new Login("Lucas", "292456-2");
+		Login pessoa4 = new Login("Fernanda", "289905-4");
+		
+		ArrayList<Login> listaFuncionario = new ArrayList<>();
+		listaFuncionario.add(pessoa1);
+		listaFuncionario.add(pessoa2);
+		listaFuncionario.add(pessoa3);
+		listaFuncionario.add(pessoa4);
+		
+		System.out.println("Digite seu nome: ");
+		nome = entrada.next();
+		System.out.println("Digite seu RA: ");
+		RA = entrada.next();
+		
+		Login pessoa = new Login(nome, RA);	
+		
+		boolean found = false;
+		for (Login login : listaFuncionario) {
+	           if(pessoa.getNome().equals(login.getNome()) && pessoa.getRA().equals(login.getRA())) {
+	        	   found = true;
+	        	   System.out.println(pessoa.getNome() +"\n"+ pessoa.getRA() +"\n"+ pessoa.getNumPedido());
+	       			pessoa.requisicao();
+	       			break;
+	           } 
+	        }
+		
+		if(!found) {
+     	   System.out.println("Você não está no sitema!");
+        }
+			
+		
+		entrada.close();
+		
+	}
+}
+
+
+
