@@ -60,6 +60,7 @@ public class Agendamento {
 
         System.out.println("Digite seu nome: ");
         String nomeCadastro = entrada.nextLine();
+        cliente = nomeCadastro;
 
         System.out.println("Digite seu telefone: ");
         String telefoneCadastro = entrada.nextLine();
@@ -68,12 +69,16 @@ public class Agendamento {
         String emailCadastro = entrada.nextLine();
 
        clientesCadastrados.add(new Cliente(nomeCadastro, telefoneCadastro, emailCadastro));
+       mostrarServicos();
+       escolhaServico();
+
     }
 
 
     public void loginCliente(){
         System.out.println("Digite seu nome: ");
         String nomeLogin = entrada.nextLine();
+        cliente = nomeLogin;
 
         System.out.println("Digite seu telefone: ");
         String telefoneLogin = entrada.nextLine();
@@ -92,7 +97,6 @@ public class Agendamento {
                 mostrarServicos();
                 escolhaServico();
 
-            
             }
         }
 
@@ -185,7 +189,6 @@ public class Agendamento {
 
     public void marcarHorario(String escolhaString){
 
-
         entrada.nextLine();
         System.out.println("Digite o nome do barbeiro: ");
         String nomeBarbeiro = entrada.nextLine();
@@ -206,7 +209,6 @@ public class Agendamento {
             barbeiro = nomeBarbeiro;
             horario = horarioBarbeiro;
             servicos = escolhaString;
-            cliente = " ";
             System.out.println("Agendando...");
             listaAgendamentos.add(new Agendamento(barbeiro,  horario, servicos, cliente));
             System.out.println("Agendamento feito com sucesso.");
@@ -250,7 +252,10 @@ public class Agendamento {
 
     public void verificarAgendamentos(){
         for(Agendamento listAgendamento : listaAgendamentos){
-            System.out.println(listAgendamento.getBarbeiro() + " " + listAgendamento.getHorario() + " " + listAgendamento.getServicos());
+            System.out.println(" Barbeiro: " + listAgendamento.getBarbeiro() + "\n " 
+            + "Horário: " + listAgendamento.getHorario() + "\n "  
+            + "Serviço: " + listAgendamento.getServicos() + "\n " 
+            + "Cliente: " + cliente);
         }
     }
 
