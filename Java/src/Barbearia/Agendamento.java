@@ -23,7 +23,7 @@ public class Agendamento {
     private String cliente;
     int i = 0;
 
-    Agendamento(String barbeiro, String horario, String servicos, String cliente) {
+     public Agendamento(String barbeiro, String horario, String servicos, String cliente) {
         this.barbeiro = barbeiro;
         this.horario = horario;
         this.servicos = servicos;

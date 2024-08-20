@@ -16,6 +16,7 @@ public class Barbeiro {
     }
 
     public void setNome(String nome) {
+        //Podem se criado uma lógica para verfificar o nome.
         this.nome = nome;
     }
 
@@ -23,17 +24,11 @@ public class Barbeiro {
         return horarioDeTrabalho;
     }
 
-    public void setHorarioDeTrabalho(String horarioDeTrabalho) {
-        this.horarioDeTrabalho = horarioDeTrabalho;
-    }
-
     public String getEspecialidade() {
         return especialidade;
     }
 
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
-    }
+
 }
 
 
