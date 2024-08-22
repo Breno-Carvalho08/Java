@@ -1,4 +1,4 @@
-package Barbearia;
+package Barbearia.Barbearia;
 
 import java.util.ArrayList;
 import java.util.List;

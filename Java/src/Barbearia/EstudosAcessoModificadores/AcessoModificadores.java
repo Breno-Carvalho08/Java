@@ -1,7 +1,6 @@
 package Barbearia.EstudosAcessoModificadores;
 
-import Barbearia.Agendamento;
-
+import Barbearia.Barbearia.Agendamento;
 
 public class AcessoModificadores {
     /*
@@ -12,7 +11,7 @@ public class AcessoModificadores {
     precisamos utilziar o modificador de acesso public para ficar "visivel".
     */ 
     
-    Agendamento agendar = new Agendamento("","","",""); 
+   
 
 
 

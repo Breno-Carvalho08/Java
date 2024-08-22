@@ -1,4 +1,4 @@
-package Barbearia;
+package Barbearia.Barbearia;
 
 public class Barberia {
     public static void main(String[] args) {

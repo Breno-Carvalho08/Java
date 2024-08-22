@@ -1,4 +1,4 @@
-package Barbearia;
+package Barbearia.Barbearia;
 
 public class Barbeiro {
     private String nome;
