@@ -4,14 +4,14 @@ public class Civic extends Carro{
 	
 	public Civic(String cor, String ano, int velocidadeMaxima){		
 		super(cor, ano, velocidadeMaxima);//Herdou os atibutos do construtor carro
+		setDelta(10);
 	}
 	public int acelerar() {
 		
-		if(velocidadeAtual + delta < VELOCIDADE_MAXIMA) {
-			delta += 10;
-			velocidadeAtual = delta;
+		if(velocidadeAtual + getDelta() < VELOCIDADE_MAXIMA) {
+			velocidadeAtual += getDelta();
 			return velocidadeAtual;
-		}else {
+		} else {
 		return VELOCIDADE_MAXIMA;
 		}
 	}

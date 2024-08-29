@@ -1,4 +1,4 @@
-package Barbearia.EstudosAcessoModificadores;
+package EstudosAcessoModificadores;
 
 import Barbearia.Barbearia.Agendamento;
 

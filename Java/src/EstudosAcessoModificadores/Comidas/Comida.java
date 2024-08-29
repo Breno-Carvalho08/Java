@@ -1,4 +1,4 @@
-package Barbearia.EstudosAcessoModificadores.Comidas;
+package EstudosAcessoModificadores.Comidas;
 
 public class Comida {
 
