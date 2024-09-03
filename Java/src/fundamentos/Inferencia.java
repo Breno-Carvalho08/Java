@@ -9,9 +9,9 @@ public class Inferencia { // Poder criar variáveis utilizando o "var"
 		//Não podemos colocar na variável "a" algum valor de texto
 		//a = "Texto" 
 		
-		var b = 4.5; //A declaração da variavel utilizando var deve seguir junto com a sua inicialização
+		//var b = 4.5; //A declaração da variavel utilizando var deve seguir junto com a sua inicialização
 		//var b = 3 --> Declaração + Inicialização
-		System.out.println(b);
+		//System.out.println(b);
 		//A mesma coisa vale para a variável "b"
 		
 		String c; //Inicialização

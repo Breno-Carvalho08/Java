@@ -22,14 +22,14 @@ public class TipoString {
 		System.out.printf("%s \n",s ); //Esse comando é para formatação, por isso o "f" no final.
 		//o "%s" serve para mostrar o que está armazenado em uma variável String, ou seja, algo com palavras.
 		
-		var Idade = 32;
-		var salario = 1000;
+		//var Idade = 32;
+		//var salario = 1000;
 		
-		System.out.printf("%d anos ganhando %d reais de salário", Idade,salario); //Já para números inteiros é utilizado o "%d".
+		//System.out.printf("%d anos ganhando %d reais de salário", Idade,salario); //Já para números inteiros é utilizado o "%d".
 		//Temos também o "%.f" que será usado para quando os números tiverem casas decimais, podendo escolher quantas casas decimais será mostrado.
 		
-		String frase = String.format("\n %d anos ganhando %d reais de salário", Idade,salario);
-		System.out.println(frase); 
+		//String frase = String.format("\n %d anos ganhando %d reais de salário", Idade,salario);
+		//System.out.println(frase); 
 		//O String.format permite que utilizamos os simbolos (%d %.f %s) sem precisar utilizar o "System.out.printf" e ainda armazenar em uma variável String. 
 	}
 }
